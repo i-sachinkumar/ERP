@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@layout/login_page_fragment"
     android:id="@+id/main_navigation">
 
+    <fragment
+        android:id="@+id/login_page_fragment"
+        android:name="com.ihrsachin.apostle.screens.login_page.LoginPageFragment"
+        android:label="enable_ble_fragment"
+        tools:layout="@layout/login_page_fragment">
+        <action
+            android:id="@+id/enable_ble_fragment_to_ble_scan_fragment"
+            app:destination="@id/home_page_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/home_page_fragment"
+        android:name="com.ihrsachin.apostle.screens.homepage.HomePageFragment"
+        android:label="enable_ble_fragment"
+        tools:layout="@layout/home_page_fragment">
+        <action
+            android:id="@+id/enable_ble_fragment_to_ble_scan_fragment" />
+    </fragment>
 
 </navigation>

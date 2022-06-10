@@ -1,4 +1,6 @@
 package com.ihrsachin.apostle.screens.login_page
 
-class LoginPageFragment {
+import androidx.fragment.app.Fragment
+
+class LoginPageFragment : Fragment(){
 }

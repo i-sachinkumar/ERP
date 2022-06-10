@@ -1,4 +1,6 @@
 package com.ihrsachin.apostle.screens.login_page
 
-class LoginPageViewModel {
+import androidx.lifecycle.ViewModel
+
+class LoginPageViewModel : ViewModel() {
 }
