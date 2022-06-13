@@ -20,8 +20,6 @@
         android:name="com.ihrsachin.apostle.screens.homepage.HomePageFragment"
         android:label="enable_ble_fragment"
         tools:layout="@layout/home_page_fragment">
-        <action
-            android:id="@+id/enable_ble_fragment_to_ble_scan_fragment" />
     </fragment>
 
 </navigation>

@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/purple_200"
+            app:layout_constraintTop_toTopOf="@+id/drawer_btn"/>
+
+
+        <ImageButton
+            android:id="@+id/drawer_btn"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@color/purple_200"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@android:drawable/ic_menu_view" />
+
+        <TextView
+            android:id="@+id/school_name"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@+id/drawer_btn"
+            app:layout_constraintEnd_toStartOf="@+id/menu_btn"
+            app:layout_constraintTop_toTopOf="@+id/drawer_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/drawer_btn"
+            android:text="ABC Public School" />
+
+        <ImageButton
+            android:id="@+id/menu_btn"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@color/purple_200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/drawer_btn"
+            android:src="@android:drawable/ic_menu_view" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profile_pic"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            app:cardCornerRadius="100dp"
+            android:backgroundTint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/drawer_btn"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/profile_pic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Subhash Kumar"
+            android:textSize="20sp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

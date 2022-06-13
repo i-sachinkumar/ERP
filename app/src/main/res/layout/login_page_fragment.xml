@@ -65,6 +65,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="password"
+            android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/username_text"
             app:layout_constraintStart_toStartOf="@+id/username_text"
