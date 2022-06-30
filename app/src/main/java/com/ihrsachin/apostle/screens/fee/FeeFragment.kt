@@ -1,7 +1,6 @@
-package com.ihrsachin.apostle.screens.login_page
+package com.ihrsachin.apostle.screens.fee
 
 import android.content.Intent
-import android.icu.text.CaseMap
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,13 +8,13 @@ import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.ihrsachin.apostle.R
-import com.ihrsachin.apostle.databinding.LoginPageFragmentBinding
+import com.ihrsachin.apostle.databinding.FeeFragmentBinding
 
-class LoginPageFragment : Fragment(){
-    private lateinit var binding: LoginPageFragmentBinding
-    private lateinit var viewModel: LoginPageViewModel
+class FeeFragment : Fragment() {
+
+    private lateinit var binding: FeeFragmentBinding
+    private lateinit var viewModel: FeeViewModel
 
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
@@ -33,24 +32,18 @@ class LoginPageFragment : Fragment(){
 
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.login_page_fragment,
+            R.layout.fee_fragment,
             container,
             false
         )
 
-        binding.stuParentLoginBtn.setOnClickListener{
-            gotoHomePage()
-        }
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.loginPage = this
+        binding.feePage = this
     }
 
-    fun gotoHomePage(){
-        findNavController().navigate(R.id.action_login_page_fragment_to_home_page_fragment)
-    }
 }
