@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "324328192922",
+    "firebase_url": "https://apostle-c4f90-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "apostle-c4f90",
+    "storage_bucket": "apostle-c4f90.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324328192922:android:dffd5a359c3ddc3f36d823",
+        "android_client_info": {
+          "package_name": "com.ihrsachin.apostle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "324328192922-cl34plg78oq80vif78frueqgusio8ahp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXvSJfSI9XQQlxkfr0HCwKgOHyWK83XIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "324328192922-cl34plg78oq80vif78frueqgusio8ahp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

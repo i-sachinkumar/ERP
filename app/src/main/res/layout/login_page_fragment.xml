@@ -5,11 +5,8 @@
 
     <data>
         <variable
-            name="login_page_fragment"
+            name="loginPage"
             type="com.ihrsachin.apostle.screens.login_page.LoginPageFragment" />
-        <variable
-            name="login_page_view_model"
-            type="com.ihrsachin.apostle.screens.login_page.LoginPageViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,19 +62,37 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="password"
+            android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/username_text"
             app:layout_constraintStart_toStartOf="@+id/username_text"
             app:layout_constraintTop_toBottomOf="@+id/password_text" />
 
+
+
         <Button
+            android:id="@+id/teacher_login_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Teacher Login"
+            android:textSize="12sp"
             android:layout_marginTop="16dp"
-            android:text="Login"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="#C67634"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password_val" />
+            app:layout_constraintEnd_toStartOf="@+id/stu_parent_login_btn"
+            app:layout_constraintTop_toBottomOf="@+id/password_val"/>
+
+
+        <Button
+            android:id="@+id/stu_parent_login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student/Parent Login"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/teacher_login_btn"
+            app:layout_constraintBaseline_toBaselineOf="@+id/teacher_login_btn"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
