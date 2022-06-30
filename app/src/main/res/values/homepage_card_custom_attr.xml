@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="homepage_card">
+        <attr name="caption" format="string"/>
+        <attr name="img_src" format="integer"/>
+        <attr name="is_icon_visible" format="boolean"/>
+    </declare-styleable>
+</resources>
