@@ -15,15 +15,9 @@ class AttendanceFragment: Fragment() {
     private lateinit var binding: AttendanceFragmentBinding
     private lateinit var viewModel: AttendanceViewModel
 
-    private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
-
-
-
 
     }
 
@@ -32,7 +26,6 @@ class AttendanceFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        //return super.onCreateView(inflater, container, savedInstanceState)
 
         binding = DataBindingUtil.inflate(
             inflater,
@@ -40,6 +33,8 @@ class AttendanceFragment: Fragment() {
             container,
             false
         )
+
+
 
 
         return binding.root
