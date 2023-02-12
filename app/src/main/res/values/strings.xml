@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Apostle</string>
-    <string name="school_name">Gyan English Public High School</string>
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
+    <string name="login_to_continue">Login to continue</string>
 </resources>

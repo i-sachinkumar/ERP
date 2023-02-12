@@ -7,14 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavOptions
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.ihrsachin.apostle.MainViewModel
 import com.ihrsachin.apostle.R
 import com.ihrsachin.apostle.databinding.LoginPageFragmentBinding
+import com.ihrsachin.apostle.screens.homepage.HomePageFragment
 
 
 class LoginPageFragment : Fragment(){
@@ -23,24 +29,19 @@ class LoginPageFragment : Fragment(){
 
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
-    lateinit var mainViewModel: MainViewModel
+    private lateinit var mainViewModel: MainViewModel
 
     override fun onStop() {
         super.onStop()
-        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+//        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
         mainViewModel.mDrawerLayout!!.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
     }
 
     override fun onResume() {
         super.onResume()
         mainViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+//        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         mainViewModel.mDrawerLayout!!.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -70,6 +71,12 @@ class LoginPageFragment : Fragment(){
     }
 
     private fun gotoHomePage(){
-        findNavController().navigate(R.id.action_login_page_fragment_to_home_page_fragment)
+        val extras = FragmentNavigatorExtras(binding.hiStudent to "school_name_home")
+        findNavController().navigate(
+            R.id.action_login_page_fragment_to_home_page_fragment,
+            null,
+            null,
+            extras
+        )
     }
 }

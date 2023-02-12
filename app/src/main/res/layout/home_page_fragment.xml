@@ -4,149 +4,153 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="homePage"
             type="com.ihrsachin.apostle.screens.homepage.HomePageFragment" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/background_screen">
 
-
-        <View
-            android:id="@+id/view"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@color/purple_200"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-
-        <TextView
-            android:id="@+id/school_name"
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/school_name"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginVertical="10dp"
-            android:background="@color/purple_200"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:background="@color/white">
 
 
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/purple_200"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/profile_pic"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:backgroundTint="@color/black"
-            app:cardCornerRadius="1000dp"
-            android:layout_marginTop="30dp"
-            app:layout_constraintBottom_toTopOf="@+id/name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/school_name">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/dp"
+            <TextView
+                android:id="@+id/school_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:background="@color/purple_200"
+                android:gravity="center"
+                android:text="@string/school_name"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:transitionName="school_name_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profile_pic"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/black"
+                app:cardCornerRadius="1000dp"
+                app:layout_constraintBottom_toTopOf="@+id/name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/school_name">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_launcher_foreground" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_launcher_foreground"/>
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Subhash Kumar"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_pic"/>
+                android:text="Subhash Kumar"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
 
 
-        <com.ihrsachin.apostle.custom_views.HomePageCard
-            android:id="@+id/attendance_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name"
-            app:layout_constraintEnd_toStartOf="@+id/fee_icon"
-            custom:caption="Attendance"
-            custom:img_src="@android:drawable/stat_sys_download_done"
-            custom:is_icon_visible="false"/>
+            <com.ihrsachin.apostle.custom_views.HomePageCard
+                android:id="@+id/attendance_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/fee_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                custom:caption="Attendance"
+                custom:img_src="@android:drawable/stat_sys_download_done"
+                custom:is_icon_visible="false" />
 
-        <com.ihrsachin.apostle.custom_views.HomePageCard
-            android:id="@+id/fee_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/attendance_icon"
-            app:layout_constraintTop_toTopOf="@+id/attendance_icon"
-            app:layout_constraintBottom_toBottomOf="@+id/attendance_icon"
-            app:layout_constraintEnd_toStartOf="@+id/profile_icon"
-            custom:caption="Fee"
-            custom:img_src="@android:drawable/stat_sys_download_done"
-            custom:is_icon_visible="false"/>
+            <com.ihrsachin.apostle.custom_views.HomePageCard
+                android:id="@+id/fee_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/attendance_icon"
+                app:layout_constraintEnd_toStartOf="@+id/profile_icon"
+                app:layout_constraintStart_toEndOf="@+id/attendance_icon"
+                app:layout_constraintTop_toTopOf="@+id/attendance_icon"
+                custom:caption="Fee"
+                custom:img_src="@android:drawable/stat_sys_download_done"
+                custom:is_icon_visible="false" />
 
-        <com.ihrsachin.apostle.custom_views.HomePageCard
-            android:id="@+id/profile_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/fee_icon"
-            app:layout_constraintTop_toTopOf="@+id/attendance_icon"
-            app:layout_constraintBottom_toBottomOf="@+id/attendance_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            custom:caption="Profile"
-            custom:img_src="@android:drawable/stat_sys_download_done"
-            custom:is_icon_visible="false"/>
-
-
+            <com.ihrsachin.apostle.custom_views.HomePageCard
+                android:id="@+id/profile_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/attendance_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fee_icon"
+                app:layout_constraintTop_toTopOf="@+id/attendance_icon"
+                custom:caption="Profile"
+                custom:img_src="@android:drawable/stat_sys_download_done"
+                custom:is_icon_visible="false" />
 
 
-        <com.ihrsachin.apostle.custom_views.HomePageCard
-            android:id="@+id/item4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/attendance_icon"
-            app:layout_constraintEnd_toStartOf="@+id/item5"
-            custom:caption="item4"
-            custom:img_src="@android:drawable/stat_sys_download_done"
-            custom:is_icon_visible="false"/>
+            <com.ihrsachin.apostle.custom_views.HomePageCard
+                android:id="@+id/item4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/item5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/attendance_icon"
+                custom:caption="item4"
+                custom:img_src="@android:drawable/stat_sys_download_done"
+                custom:is_icon_visible="false" />
 
-        <com.ihrsachin.apostle.custom_views.HomePageCard
-            android:id="@+id/item5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/item4"
-            app:layout_constraintTop_toTopOf="@+id/item4"
-            app:layout_constraintBottom_toBottomOf="@+id/item4"
-            app:layout_constraintEnd_toStartOf="@+id/item6"
-            custom:caption="item5"
-            custom:img_src="@android:drawable/stat_sys_download_done"
-            custom:is_icon_visible="false"/>
+            <com.ihrsachin.apostle.custom_views.HomePageCard
+                android:id="@+id/item5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/item4"
+                app:layout_constraintEnd_toStartOf="@+id/item6"
+                app:layout_constraintStart_toEndOf="@+id/item4"
+                app:layout_constraintTop_toTopOf="@+id/item4"
+                custom:caption="item5"
+                custom:img_src="@android:drawable/stat_sys_download_done"
+                custom:is_icon_visible="false" />
 
-        <com.ihrsachin.apostle.custom_views.HomePageCard
-            android:id="@+id/item6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/item5"
-            app:layout_constraintTop_toTopOf="@+id/item4"
-            app:layout_constraintBottom_toBottomOf="@+id/item4"
-            app:layout_constraintEnd_toEndOf="parent"
-            custom:caption="item6"
-            custom:img_src="@android:drawable/stat_sys_download_done"
-            custom:is_icon_visible="false"/>
+            <com.ihrsachin.apostle.custom_views.HomePageCard
+                android:id="@+id/item6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/item4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/item5"
+                app:layout_constraintTop_toTopOf="@+id/item4"
+                custom:caption="item6"
+                custom:img_src="@android:drawable/stat_sys_download_done"
+                custom:is_icon_visible="false" />
 
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

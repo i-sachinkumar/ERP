@@ -4,92 +4,156 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="loginPage"
             type="com.ihrsachin.apostle.screens.login_page.LoginPageFragment" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        android:background="@drawable/background_screen">
 
-        <TextView
-            android:id="@+id/school_name"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center_horizontal"
-            android:text="@string/school_name"
-            android:textColor="#CA2688"
-            android:textSize="36sp"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content">
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username_text"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/password_text"
-            app:layout_constraintVertical_chainStyle="packed">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/username_val"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="username"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:background="@drawable/foreground_screen"
+                app:layout_constraintTop_toBottomOf="@+id/icons"
+                android:layout_marginTop="-20dp">
+
+                <TextView
+                    android:id="@+id/hi_student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="@string/hi_student_name"
+                    android:textColor="@color/black"
+                    android:textSize="36sp"
+                    android:transitionName="hi_student_login"
+                    app:layout_constraintStart_toStartOf="@+id/username_text"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
+                <TextView
+                    android:id="@+id/sign_in_to_continue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_to_continue"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/username_text"
+                    app:layout_constraintTop_toBottomOf="@+id/hi_student" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password_text"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            app:passwordToggleEnabled="true"
-            app:layout_constraintTop_toBottomOf="@+id/username_text"
-            app:layout_constraintBottom_toTopOf="@+id/teacher_login_btn">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password_val"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/username_text"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="25"
+                    app:layout_constraintTop_toBottomOf="@+id/sign_in_to_continue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/username_val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="username" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/password_text"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/username_text"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password_val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="password"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/teacher_login_btn"
+                    style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#C67634"
+                    android:text="Teacher Login"
+                    android:textSize="12sp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintEnd_toStartOf="@+id/stu_parent_login_btn"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/password_text" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/stu_parent_login_btn"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Student/Parent Login"
+                    android:textSize="12sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/teacher_login_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/teacher_login_btn" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:id="@+id/forgot_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Forgot Password?"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/stu_parent_login_btn" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:layout_constraintTop_toBottomOf="@+id/forgot_password"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:id="@+id/foreground"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:layout_marginTop="-20dp"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/icons"-->
+<!--                app:srcCompat="@drawable/foreground_screen" />-->
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:hint="password"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="36dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icons" />
 
 
-        <com.google.android.material.button.MaterialButton
-            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
-            android:id="@+id/teacher_login_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Teacher Login"
-            android:textSize="12sp"
-            android:backgroundTint="#C67634"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/stu_parent_login_btn"
-            app:layout_constraintTop_toBottomOf="@+id/password_text"
-            app:layout_constraintBottom_toBottomOf="parent"/>
 
-
-        <com.google.android.material.button.MaterialButton
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:id="@+id/stu_parent_login_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Student/Parent Login"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/teacher_login_btn"
-            app:layout_constraintBaseline_toBaselineOf="@+id/teacher_login_btn"/>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </layout>

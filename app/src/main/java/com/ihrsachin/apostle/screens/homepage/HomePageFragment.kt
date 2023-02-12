@@ -2,11 +2,13 @@ package com.ihrsachin.apostle.screens.homepage
 
 import android.content.Intent
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
+import androidx.core.view.ViewCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -42,6 +44,10 @@ class HomePageFragment : Fragment(){
         )
         viewModel = ViewModelProvider(this)[HomePageViewModel::class.java]
 
+        val animation = TransitionInflater.from(requireContext()).inflateTransition(R.transition.school_name_trans)
+
+        sharedElementEnterTransition = animation
+        sharedElementReturnTransition = animation
 
         binding.run {
             attendanceIcon.setOnClickListener{
@@ -51,6 +57,9 @@ class HomePageFragment : Fragment(){
                 findNavController().navigate(R.id.action_home_page_fragment_to_fee_fragment)
             }
             profileIcon.setOnClickListener{
+                findNavController().navigate(R.id.action_home_page_fragment_to_profile_fragment)
+            }
+            profilePic.setOnClickListener {
                 findNavController().navigate(R.id.action_home_page_fragment_to_profile_fragment)
             }
             item4.setOnClickListener{
