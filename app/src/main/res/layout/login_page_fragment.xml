@@ -11,7 +11,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <TextView
             android:id="@+id/school_name"
@@ -49,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
+            app:passwordToggleEnabled="true"
             app:layout_constraintTop_toBottomOf="@+id/username_text"
             app:layout_constraintBottom_toTopOf="@+id/teacher_login_btn">
 
@@ -56,6 +58,7 @@
                 android:id="@+id/password_val"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:hint="password"/>
         </com.google.android.material.textfield.TextInputLayout>
 

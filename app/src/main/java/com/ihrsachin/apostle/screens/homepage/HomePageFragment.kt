@@ -10,6 +10,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.ihrsachin.apostle.R
 import com.ihrsachin.apostle.databinding.HomePageFragmentBinding
@@ -39,7 +40,7 @@ class HomePageFragment : Fragment(){
             container,
             false
         )
-
+        viewModel = ViewModelProvider(this)[HomePageViewModel::class.java]
 
 
         binding.run {
