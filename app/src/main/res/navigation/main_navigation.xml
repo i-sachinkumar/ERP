@@ -12,10 +12,6 @@
         tools:layout="@layout/login_page_fragment">
         <action
             android:id="@+id/action_login_page_fragment_to_home_page_fragment"
-            app:exitAnim="@anim/slide_out_left"
-            app:enterAnim="@anim/slide_in_right"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left"
             app:destination="@id/home_page_fragment" />
     </fragment>
 
@@ -26,24 +22,12 @@
         tools:layout="@layout/home_page_fragment">
         <action
             android:id="@+id/action_home_page_fragment_to_fee_fragment"
-            app:exitAnim="@anim/slide_out_left"
-            app:enterAnim="@anim/slide_in_right"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left"
             app:destination="@id/fee_fragment" />
         <action
             android:id="@+id/action_home_page_fragment_to_profile_fragment"
-            app:exitAnim="@anim/slide_out_left"
-            app:enterAnim="@anim/slide_in_right"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left"
             app:destination="@id/profile_fragment" />
         <action
             android:id="@+id/action_home_page_fragment_to_attendance_fragment"
-            app:exitAnim="@anim/slide_out_left"
-            app:enterAnim="@anim/slide_in_right"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left"
             app:destination="@id/attendance_fragment" />
     </fragment>
 
