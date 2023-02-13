@@ -12,144 +12,618 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background_screen">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white">
+            android:background="@drawable/background_screen">
 
-
-            <View
-                android:id="@+id/view"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/top_part"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@color/purple_200"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-            <TextView
-                android:id="@+id/school_name"
-                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:background="@color/purple_200"
-                android:gravity="center"
-                android:text="@string/school_name"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:transitionName="school_name_home"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
 
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/profile_pic"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="@color/black"
-                app:cardCornerRadius="1000dp"
-                app:layout_constraintBottom_toTopOf="@+id/name"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/school_name">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/dp"
+                <TextView
+                    android:id="@+id/hi_student_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_launcher_foreground" />
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="cursive"
+                    android:textStyle="bold"
+                    android:text="@string/hi_student_name"
+                    android:textColor="@color/white"
+                    android:textSize="36sp"
+                    android:transitionName="hi_student_home"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
 
-            </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/class_roll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class: XI-A | Roll no: 38"
+                    android:textSize="20sp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="#D5D5D5"
+                    app:layout_constraintTop_toBottomOf="@+id/hi_student_name"
+                    app:layout_constraintStart_toStartOf="@+id/hi_student_name"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/session"
+                    style="@style/Widget.Material3.Button.ElevatedButton"
+                    android:textColor="#5C80C4"
+                    app:backgroundTint="#fff"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2022-23"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/class_roll"
+                    app:layout_constraintStart_toStartOf="@+id/hi_student_name"/>
+
+
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/hi_student_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/session"
+                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardCornerRadius="150dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="16dp">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="10dp"
+                        app:srcCompat="@drawable/ic_empty_profile_pic"/>
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bottom_part"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Subhash Kumar"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="100dp"
+                android:paddingBottom="20dp"
+                android:background="@drawable/foreground_screen"
+                app:layout_constraintTop_toBottomOf="@+id/top_part">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/play_quiz"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="150dp"
+                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/assignment"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            app:srcCompat="@drawable/ic_quiz" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="serif"
+                            android:text="@string/play_quiz"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/assignment"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/play_quiz"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/play_quiz"
+                    app:layout_constraintTop_toTopOf="@+id/play_quiz">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            app:srcCompat="@drawable/ic_assignment" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:fontFamily="serif"
+                            android:text="@string/assignment"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/holiday"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintEnd_toEndOf="@+id/play_quiz"
+                    app:layout_constraintStart_toStartOf="@+id/play_quiz"
+                    app:layout_constraintTop_toBottomOf="@+id/play_quiz">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            app:srcCompat="@drawable/ic_holiday" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="serif"
+                            android:text="@string/school_holiday"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/time_table"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/holiday"
+                    app:layout_constraintEnd_toEndOf="@+id/assignment"
+                    app:layout_constraintStart_toStartOf="@+id/assignment"
+                    app:layout_constraintTop_toTopOf="@+id/holiday">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            app:srcCompat="@drawable/ic_calender" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:fontFamily="serif"
+                            android:text="@string/time_table"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/result"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_card"
+                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintEnd_toEndOf="@+id/play_quiz"
+                    app:layout_constraintStart_toStartOf="@+id/play_quiz"
+                    app:layout_constraintTop_toBottomOf="@+id/holiday">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:contentDescription="@string/result"
+                            android:shadowRadius="20"
+                            app:srcCompat="@drawable/ic_result" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="serif"
+                            android:text="@string/result"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/date_sheet"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/result"
+                    app:layout_constraintEnd_toEndOf="@+id/assignment"
+                    app:layout_constraintStart_toStartOf="@+id/assignment"
+                    app:layout_constraintTop_toTopOf="@+id/result">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            app:srcCompat="@drawable/ic_datesheet" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:fontFamily="serif"
+                            android:text="@string/date_sheet"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/doubts"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_card"
+                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintEnd_toEndOf="@+id/play_quiz"
+                    app:layout_constraintStart_toStartOf="@+id/play_quiz"
+                    app:layout_constraintTop_toBottomOf="@+id/result">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:contentDescription="@string/result"
+                            android:shadowRadius="20"
+                            app:srcCompat="@drawable/ic_doubt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="serif"
+                            android:text="@string/ask_doubts"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/gallery"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/doubts"
+                    app:layout_constraintEnd_toEndOf="@+id/assignment"
+                    app:layout_constraintStart_toStartOf="@+id/assignment"
+                    app:layout_constraintTop_toTopOf="@+id/doubts">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            app:srcCompat="@drawable/ic_gallery" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:fontFamily="serif"
+                            android:text="@string/school_gallery"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/leave_application"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_card"
+                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintEnd_toEndOf="@+id/play_quiz"
+                    app:layout_constraintStart_toStartOf="@+id/play_quiz"
+                    app:layout_constraintTop_toBottomOf="@+id/doubts">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:contentDescription="@string/result"
+                            android:shadowRadius="20"
+                            app:srcCompat="@drawable/ic_leave_application" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="serif"
+                            android:text="@string/leave_application"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/change_password"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/leave_application"
+                    app:layout_constraintEnd_toEndOf="@+id/assignment"
+                    app:layout_constraintStart_toStartOf="@+id/assignment"
+                    app:layout_constraintTop_toTopOf="@+id/leave_application">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            app:srcCompat="@drawable/ic_change_password" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:fontFamily="serif"
+                            android:text="@string/change_password"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/events"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_card"
+                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintEnd_toEndOf="@+id/play_quiz"
+                    app:layout_constraintStart_toStartOf="@+id/play_quiz"
+                    app:layout_constraintTop_toBottomOf="@+id/leave_application">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:contentDescription="@string/result"
+                            android:shadowRadius="20"
+                            app:srcCompat="@drawable/ic_event" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="serif"
+                            android:text="@string/events"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/logout"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/events"
+                    app:layout_constraintEnd_toEndOf="@+id/assignment"
+                    app:layout_constraintStart_toStartOf="@+id/assignment"
+                    app:layout_constraintTop_toTopOf="@+id/events">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            app:srcCompat="@drawable/ic_logout" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:fontFamily="serif"
+                            android:text="@string/logout"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/attendance_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
+                app:layout_constraintEnd_toStartOf="@+id/fee_due"
+                app:layout_constraintTop_toBottomOf="@+id/top_part">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        app:srcCompat="@drawable/ic_attendance" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="serif"
+                        android:text="86.7%"
+                        android:textColor="@color/black"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="serif"
+                        android:text="@string/attendance"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
 
-            <com.ihrsachin.apostle.custom_views.HomePageCard
-                android:id="@+id/attendance_icon"
-                android:layout_width="wrap_content"
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/fee_due"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toStartOf="@+id/fee_icon"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name"
-                custom:caption="Attendance"
-                custom:img_src="@android:drawable/stat_sys_download_done"
-                custom:is_icon_visible="false" />
-
-            <com.ihrsachin.apostle.custom_views.HomePageCard
-                android:id="@+id/fee_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/attendance_icon"
-                app:layout_constraintEnd_toStartOf="@+id/profile_icon"
-                app:layout_constraintStart_toEndOf="@+id/attendance_icon"
-                app:layout_constraintTop_toTopOf="@+id/attendance_icon"
-                custom:caption="Fee"
-                custom:img_src="@android:drawable/stat_sys_download_done"
-                custom:is_icon_visible="false" />
-
-            <com.ihrsachin.apostle.custom_views.HomePageCard
-                android:id="@+id/profile_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/attendance_icon"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:strokeColor="#5C80C4"
+                app:strokeWidth="1dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/fee_icon"
-                app:layout_constraintTop_toTopOf="@+id/attendance_icon"
-                custom:caption="Profile"
-                custom:img_src="@android:drawable/stat_sys_download_done"
-                custom:is_icon_visible="false" />
+                app:layout_constraintStart_toEndOf="@+id/attendance_card"
+                app:layout_constraintTop_toTopOf="@+id/attendance_card">
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <com.ihrsachin.apostle.custom_views.HomePageCard
-                android:id="@+id/item4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toStartOf="@+id/item5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/attendance_icon"
-                custom:caption="item4"
-                custom:img_src="@android:drawable/stat_sys_download_done"
-                custom:is_icon_visible="false" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        app:srcCompat="@drawable/ic_fee_due" />
 
-            <com.ihrsachin.apostle.custom_views.HomePageCard
-                android:id="@+id/item5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/item4"
-                app:layout_constraintEnd_toStartOf="@+id/item6"
-                app:layout_constraintStart_toEndOf="@+id/item4"
-                app:layout_constraintTop_toTopOf="@+id/item4"
-                custom:caption="item5"
-                custom:img_src="@android:drawable/stat_sys_download_done"
-                custom:is_icon_visible="false" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="serif"
+                        android:text="$600.0"
+                        android:textColor="@color/black"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
 
-            <com.ihrsachin.apostle.custom_views.HomePageCard
-                android:id="@+id/item6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/item4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/item5"
-                app:layout_constraintTop_toTopOf="@+id/item4"
-                custom:caption="item6"
-                custom:img_src="@android:drawable/stat_sys_download_done"
-                custom:is_icon_visible="false" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="serif"
+                        android:text="@string/fee_due"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
+            </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

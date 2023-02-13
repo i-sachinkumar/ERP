@@ -2,4 +2,24 @@
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
     <string name="login_to_continue">Login to continue</string>
+    <string name="hi_student">Hi Student</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="teacher_login">Teacher Login</string>
+    <string name="student_parent_login">Student/Parent Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="play_quiz">Play Quiz</string>
+    <string name="assignment">Assignment</string>
+    <string name="school_holiday">School Holiday</string>
+    <string name="time_table">Time Table</string>
+    <string name="result">Result</string>
+    <string name="date_sheet">Date Sheet</string>
+    <string name="ask_doubts">Ask Doubts</string>
+    <string name="school_gallery">School Gallery</string>
+    <string name="leave_application">Leave Application</string>
+    <string name="change_password">Change Password</string>
+    <string name="events">Events</string>
+    <string name="logout">Logout</string>
+    <string name="attendance">Attendance</string>
+    <string name="fee_due">Fee Due</string>
 </resources>
