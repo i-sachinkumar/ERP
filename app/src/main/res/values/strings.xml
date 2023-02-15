@@ -22,4 +22,6 @@
     <string name="logout">Logout</string>
     <string name="attendance">Attendance</string>
     <string name="fee_due">Fee Due</string>
+    <string name="my_profile">My Profile</string>
+    <string name="done">Done</string>
 </resources>

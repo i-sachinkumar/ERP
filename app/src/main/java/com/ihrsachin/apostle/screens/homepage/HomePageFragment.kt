@@ -10,6 +10,8 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import com.ihrsachin.apostle.R
 import com.ihrsachin.apostle.databinding.HomePageFragmentBinding
 
@@ -44,6 +46,24 @@ class HomePageFragment : Fragment(){
 
         sharedElementEnterTransition = animation
         sharedElementReturnTransition = animation
+
+        binding.profilePic.setOnClickListener{
+            val extras = FragmentNavigatorExtras(
+                binding.hiStudentName to "go_back_btn_profile",
+                binding.session to "done_button_profile",
+                binding.profilePic to "profile_pic_profile",
+                binding.bottomPart to "foreground_profile"
+            )
+            findNavController().navigate(
+                R.id.action_home_page_fragment_to_profile_fragment,
+            null,
+            null,
+            extras)
+        }
+
+
+
+
 
 //        binding.run {
 //            attendanceIcon.setOnClickListener{
