@@ -17,7 +17,7 @@ import com.ihrsachin.apostle.R
 import com.ihrsachin.apostle.databinding.LoginPageFragmentBinding
 
 
-class LoginPageFragment : Fragment(){
+class LoginPageFragment : Fragment() {
     private lateinit var binding: LoginPageFragmentBinding
     private lateinit var viewModel: LoginPageViewModel
 
@@ -52,7 +52,7 @@ class LoginPageFragment : Fragment(){
             false
         )
 
-        binding.stuParentLoginBtn.setOnClickListener{
+        binding.stuParentLoginBtn.setOnClickListener {
             gotoHomePage()
         }
 
@@ -64,8 +64,15 @@ class LoginPageFragment : Fragment(){
         binding.loginPage = this
     }
 
-    private fun gotoHomePage(){
-        val extras = FragmentNavigatorExtras(binding.hiStudent to "school_name_home")
+    private fun gotoHomePage() {
+        val extras = FragmentNavigatorExtras(
+            binding.hiStudent to "hi_student_home",
+            binding.signInToContinue to "class_roll_home",
+            binding.icons to "profile_pic_home",
+//            binding.usernameText to "attendance_card_home",
+//            binding.passwordText to "fee_due_card_home",
+            binding.foregroundLogin to "foreground_home"
+        )
         findNavController().navigate(
             R.id.action_login_page_fragment_to_home_page_fragment,
             null,

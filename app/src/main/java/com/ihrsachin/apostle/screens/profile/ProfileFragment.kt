@@ -2,6 +2,7 @@ package com.ihrsachin.apostle.screens.profile
 
 import android.content.Intent
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,6 +37,15 @@ class ProfileFragment : Fragment() {
             false
         )
 
+
+        val animation = TransitionInflater.from(requireContext()).inflateTransition(R.transition.school_name_trans)
+
+        sharedElementEnterTransition = animation
+        sharedElementReturnTransition = animation
+
+        binding.goBack.setOnClickListener{
+            requireActivity().onBackPressed()
+        }
         return binding.root
     }
 

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
             name="homePage"
             type="com.ihrsachin.apostle.screens.homepage.HomePageFragment" />
@@ -48,7 +46,8 @@
                     android:text="Class: XI-A | Roll no: 38"
                     android:textSize="20sp"
                     android:layout_marginTop="16dp"
-                    android:textColor="#D5D5D5"
+                    android:textColor="@color/theme_gray"
+                    android:transitionName="class_roll_home"
                     app:layout_constraintTop_toBottomOf="@+id/hi_student_name"
                     app:layout_constraintStart_toStartOf="@+id/hi_student_name"/>
 
@@ -56,25 +55,28 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/session"
                     style="@style/Widget.Material3.Button.ElevatedButton"
-                    android:textColor="#5C80C4"
-                    app:backgroundTint="#fff"
+                    android:textColor="@color/theme_background"
+                    app:backgroundTint="@color/white"
                     android:textSize="20sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2022-23"
                     android:layout_marginTop="16dp"
+                    android:transitionName="session_home"
                     app:layout_constraintTop_toBottomOf="@+id/class_roll"
                     app:layout_constraintStart_toStartOf="@+id/hi_student_name"/>
 
 
 
                 <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/profile_pic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="@+id/hi_student_name"
                     app:layout_constraintBottom_toBottomOf="@+id/session"
-                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardBackgroundColor="@color/theme_gray"
                     app:cardCornerRadius="150dp"
+                    android:transitionName="profile_pic_home"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginEnd="16dp">
                     <androidx.appcompat.widget.AppCompatImageView
@@ -91,6 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
+                android:transitionName="foreground_home"
                 android:paddingBottom="20dp"
                 android:background="@drawable/foreground_screen"
                 app:layout_constraintTop_toBottomOf="@+id/top_part">
@@ -101,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="150dp"
-                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardBackgroundColor="@color/theme_gray"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintEnd_toStartOf="@+id/assignment"
                     app:layout_constraintStart_toStartOf="parent"
@@ -136,7 +139,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginEnd="16dp"
-                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardBackgroundColor="@color/theme_gray"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/play_quiz"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -172,7 +175,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardBackgroundColor="@color/theme_gray"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintEnd_toEndOf="@+id/play_quiz"
                     app:layout_constraintStart_toStartOf="@+id/play_quiz"
@@ -206,7 +209,7 @@
                     android:id="@+id/time_table"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardBackgroundColor="@color/theme_gray"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/holiday"
                     app:layout_constraintEnd_toEndOf="@+id/assignment"
@@ -242,7 +245,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_card"
-                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardBackgroundColor="@color/theme_gray"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintEnd_toEndOf="@+id/play_quiz"
                     app:layout_constraintStart_toStartOf="@+id/play_quiz"
@@ -278,7 +281,7 @@
                     android:id="@+id/date_sheet"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardBackgroundColor="@color/theme_gray"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/result"
                     app:layout_constraintEnd_toEndOf="@+id/assignment"
@@ -314,7 +317,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_card"
-                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardBackgroundColor="@color/theme_gray"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintEnd_toEndOf="@+id/play_quiz"
                     app:layout_constraintStart_toStartOf="@+id/play_quiz"
@@ -350,7 +353,7 @@
                     android:id="@+id/gallery"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardBackgroundColor="@color/theme_gray"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/doubts"
                     app:layout_constraintEnd_toEndOf="@+id/assignment"
@@ -386,7 +389,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_card"
-                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardBackgroundColor="@color/theme_gray"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintEnd_toEndOf="@+id/play_quiz"
                     app:layout_constraintStart_toStartOf="@+id/play_quiz"
@@ -422,7 +425,7 @@
                     android:id="@+id/change_password"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardBackgroundColor="@color/theme_gray"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/leave_application"
                     app:layout_constraintEnd_toEndOf="@+id/assignment"
@@ -458,7 +461,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_card"
-                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardBackgroundColor="@color/theme_gray"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintEnd_toEndOf="@+id/play_quiz"
                     app:layout_constraintStart_toStartOf="@+id/play_quiz"
@@ -494,7 +497,7 @@
                     android:id="@+id/logout"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:cardBackgroundColor="#D5D5D5"
+                    app:cardBackgroundColor="@color/theme_gray"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintBottom_toBottomOf="@+id/events"
                     app:layout_constraintEnd_toEndOf="@+id/assignment"
@@ -534,8 +537,9 @@
                 android:layout_marginTop="20dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="15dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="1dp"
+                android:transitionName="attendance_card_home"
+                app:strokeColor="@color/theme_background"
+                app:strokeWidth="@dimen/thin_stroke_width"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/fee_due"
                 app:layout_constraintTop_toBottomOf="@+id/top_part">
@@ -584,8 +588,9 @@
                 android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="15dp"
-                app:strokeColor="#5C80C4"
-                app:strokeWidth="1dp"
+                app:strokeColor="@color/theme_background"
+                app:strokeWidth="@dimen/thin_stroke_width"
+                android:transitionName="fee_due_card_home"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/attendance_card"
                 app:layout_constraintTop_toTopOf="@+id/attendance_card">
