@@ -24,4 +24,5 @@
     <string name="fee_due">Fee Due</string>
     <string name="my_profile">My Profile</string>
     <string name="done">Done</string>
+    <string name="download_pdf">Download PDF</string>
 </resources>

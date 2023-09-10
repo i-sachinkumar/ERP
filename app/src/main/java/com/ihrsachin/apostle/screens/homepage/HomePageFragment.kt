@@ -42,10 +42,7 @@ class HomePageFragment : Fragment(){
         )
         viewModel = ViewModelProvider(this)[HomePageViewModel::class.java]
 
-        val animation = TransitionInflater.from(requireContext()).inflateTransition(R.transition.school_name_trans)
 
-        sharedElementEnterTransition = animation
-        sharedElementReturnTransition = animation
 
         binding.profilePic.setOnClickListener{
             val extras = FragmentNavigatorExtras(
@@ -61,9 +58,25 @@ class HomePageFragment : Fragment(){
             extras)
         }
 
+        binding.timeTable.setOnClickListener {
+            findNavController().navigate(R.id.action_home_page_fragment_to_time_table_fragment)
+        }
 
+        binding.attendanceCard.setOnClickListener {
+            findNavController().navigate(R.id.action_home_page_fragment_to_attendance_fragment)
+        }
 
+        binding.gallery.setOnClickListener {
+            findNavController().navigate(R.id.action_home_page_fragment_to_gallery_fragment)
+        }
 
+        binding.result.setOnClickListener {
+            findNavController().navigate(R.id.action_home_page_fragment_to_result_fragment)
+        }
+
+        binding.changePassword.setOnClickListener {
+            findNavController().navigate(R.id.action_home_page_fragment_to_change_password_fragment)
+        }
 
 //        binding.run {
 //            attendanceIcon.setOnClickListener{

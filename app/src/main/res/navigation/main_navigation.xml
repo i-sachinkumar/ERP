@@ -29,8 +29,45 @@
         <action
             android:id="@+id/action_home_page_fragment_to_attendance_fragment"
             app:destination="@id/attendance_fragment" />
+        <action
+            android:id="@+id/action_home_page_fragment_to_time_table_fragment"
+            app:destination="@id/time_table_fragment" />
+        <action
+            android:id="@+id/action_home_page_fragment_to_gallery_fragment"
+            app:destination="@id/gallery_fragment" />
+        <action
+            android:id="@+id/action_home_page_fragment_to_result_fragment"
+            app:destination="@id/result_fragment" />
+        <action
+            android:id="@+id/action_home_page_fragment_to_change_password_fragment"
+            app:destination="@id/change_password_fragment" />
     </fragment>
 
+
+    <fragment
+        android:id="@+id/change_password_fragment"
+        android:name="com.ihrsachin.apostle.screens.change_password.ChangePasswordFragment"
+        android:label="@string/change_password"
+        tools:layout="@layout/change_password_fragment"/>
+
+    <fragment
+        android:id="@+id/result_fragment"
+        android:name="com.ihrsachin.apostle.screens.result.ResultFragment"
+        android:label="result_fragment"
+        tools:layout="@layout/result_fragment"/>
+
+    <fragment
+        android:id="@+id/gallery_fragment"
+        android:name="com.ihrsachin.apostle.screens.gallery.GalleryFragment"
+        android:label="gallery_fragment"
+        tools:layout="@layout/gallery_fragment"/>
+
+    <fragment
+        android:id="@+id/time_table_fragment"
+        android:name="com.ihrsachin.apostle.screens.time_table.TimeTableFragment"
+        android:label="time_table_fragment"
+        tools:layout="@layout/time_table_fragment">
+    </fragment>
 
     <fragment
         android:id="@+id/fee_fragment"

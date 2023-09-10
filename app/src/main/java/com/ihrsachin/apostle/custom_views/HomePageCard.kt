@@ -38,28 +38,3 @@ class HomePageCard : ConstraintLayout {
     }
 
 }
-
-
-//class InfoBox :ConstraintLayout {
-//    var imageView: ImageView? = null
-//    var textView1: TextView? = null
-//    var textView2: TextView? = null
-//
-//
-//    constructor(context: Context) : super(context) {
-//    }
-//
-//    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
-//        View.inflate(context, R.layout.custom_item, this)
-//        @SuppressLint("Recycle") val attrs1 =
-//            context.obtainStyledAttributes(attrs, R.styleable.InfoBox)
-//        imageView = findViewById<ImageView>(R.id.imageView)
-//        imageView!!.setBackgroundColor(getResources().getColor(R.color.teal_700))
-//        imageView!!.setImageResource(attrs1.getResourceId(R.styleable.InfoBox_android_src,
-//            R.color.white))
-//        textView1 = findViewById<TextView>(R.id.text)
-//        textView1!!.text = attrs1.getText(R.styleable.InfoBox_text_heading)
-//        textView2 = findViewById<TextView>(R.id.text2)
-//        textView2!!.text = attrs1.getText(R.styleable.InfoBox_text_desc)
-//    }
-//}

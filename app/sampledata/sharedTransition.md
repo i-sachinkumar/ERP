@@ -16,6 +16,7 @@ in xml we have to provide unique transitionName to each element we want to anima
 
 #### kotlin code, in Source fragment:
 ```kotlin
+// pair is like: viewFromSourceFragment to "transitionName_from_destination_fragment_layout"
 val extras = FragmentNavigatorExtras(
     binding.hiStudentName to "go_back_btn_profile",
     binding.session to "done_button_profile",
@@ -39,7 +40,6 @@ val animation = TransitionInflater.from(requireContext()).inflateTransition(andr
 sharedElementEnterTransition = animation
 sharedElementReturnTransition = animation
 ```
-
 
 #### custom transition xml
 ```xml
