@@ -10,9 +10,9 @@ import com.ihrsachin.apostle.R
 
 class HomePageCard : ConstraintLayout {
 
-    var mainImageView: ImageView
+    private var mainImageView: ImageView
     private var iconImageView: ImageView
-    var caption : TextView
+    private var caption : TextView
 
     constructor(context: Context) : super(context){
         mainImageView = findViewById(R.id.image)
@@ -33,7 +33,6 @@ class HomePageCard : ConstraintLayout {
             iconImageView.visibility = VISIBLE
         }
         else iconImageView.visibility = GONE
-
         caption.text = attrs1.getString(R.styleable.homepage_card_caption)
     }
 

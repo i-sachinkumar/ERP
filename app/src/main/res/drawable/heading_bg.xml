@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background boundary shape FF7292CF-->
+<!--    <item>-->
+<!--        <shape android:shape="rectangle">-->
+<!--            <stroke-->
+<!--                android:width="2dp"-->
+<!--                android:color="#607DB5" />-->
+<!--        </shape>-->
+<!--    </item>-->
+
+    <!-- Glassmorphic shape (partially transparent blue in the middle) -->
+    <!--    <item android:right="0dp" android:left="0dp" android:top="0dp" android:bottom="0dp">-->
+    <!--        <shape android:shape="rectangle">-->
+    <!--            <solid android:color="#4B283FBD"/>-->
+    <!--        </shape>-->
+    <!--    </item>-->
+
+    <item
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="0dp">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <gradient
+                        android:angle="-45"
+                        android:endColor="#436AB6"
+                        android:startColor="#6386C8"
+                        android:type="linear" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+</layer-list>

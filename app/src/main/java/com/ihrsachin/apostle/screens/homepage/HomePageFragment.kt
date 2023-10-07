@@ -77,6 +77,9 @@ class HomePageFragment : Fragment(){
         binding.changePassword.setOnClickListener {
             findNavController().navigate(R.id.action_home_page_fragment_to_change_password_fragment)
         }
+        binding.feeDue.setOnClickListener {
+            findNavController().navigate(R.id.action_home_page_fragment_to_fee_fragment)
+        }
 
 //        binding.run {
 //            attendanceIcon.setOnClickListener{
