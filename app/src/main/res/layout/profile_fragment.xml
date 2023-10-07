@@ -23,7 +23,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/my_profile"
             android:textSize="20sp"
-            android:drawableLeft="@drawable/ic_arrow_back"
+            app:icon="@drawable/ic_arrow_back"
             android:textColor="@color/white"
             android:transitionName="go_back_btn_profile"
             android:layout_marginStart="16dp"
@@ -38,8 +38,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/done"
             android:textSize="20sp"
-            android:drawableLeft="@drawable/ic_check"
-            android:drawableTint="@color/theme_background"
+            app:icon="@drawable/ic_check"
             android:textColor="@color/theme_background"
             android:transitionName="done_button_profile"
             android:layout_marginEnd="16dp"/>
@@ -47,23 +46,27 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="40dp"
             android:layout_marginTop="40dp"
             android:transitionName="foreground_profile"
-            app:layout_constraintTop_toBottomOf="@+id/go_back">
+            app:layout_constraintTop_toBottomOf="@+id/go_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="-40dp">
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="20dp">
+                    android:paddingBottom="60dp">
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/profile_card"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:strokeColor="@color/theme_background"
@@ -125,6 +128,286 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </com.google.android.material.card.MaterialCardView>
+
+
+
+
+                    <!--   Student details field below   -->
+
+
+                    <!-- adhar no -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:id="@+id/adhar_wrap"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/academic_year_wrap"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_card"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="20dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/adhar_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:editable="false"
+                            android:hint="Adhar Number"
+                            android:text="XXXX XXXX XXXX"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- academic year -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/academic_year_wrap"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/adhar_wrap"
+                        app:layout_constraintTop_toTopOf="@+id/adhar_wrap"
+                        android:layout_marginHorizontal="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/academic_year"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:editable="false"
+                            android:hint="Academic Year"
+                            android:text="XXXX - XX"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    <!-- Date of Birth -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:id="@+id/dob_wrap"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/doa_wrap"
+                        app:layout_constraintTop_toBottomOf="@+id/adhar_wrap"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="20dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:editable="false"
+                            android:hint="Date of Birth"
+                            android:text="DD-MM-YYYY"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Date of Admission -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/doa_wrap"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/dob_wrap"
+                        app:layout_constraintTop_toTopOf="@+id/dob_wrap"
+                        android:layout_marginHorizontal="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/doa"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:editable="false"
+                            android:hint="Admission Date"
+                            android:text="DD-MM-YYYY"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    <!-- Admission Number -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:id="@+id/admission_no_wrap"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/admission_class_wrap"
+                        app:layout_constraintTop_toBottomOf="@+id/dob_wrap"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="20dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/admission_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:editable="false"
+                            android:hint="Admission Numbar"
+                            android:text="XXXX XXXX"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Admission Class -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/admission_class_wrap"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/admission_no_wrap"
+                        app:layout_constraintTop_toTopOf="@+id/admission_no_wrap"
+                        android:layout_marginHorizontal="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/admission_class"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:editable="false"
+                            android:hint="Admission Class"
+                            android:text="XX"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!-- Mother Name -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:id="@+id/mother_name_wrap"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/father_name_wrap"
+                        app:layout_constraintTop_toBottomOf="@+id/admission_no_wrap"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="20dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/mother_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:editable="false"
+                            android:hint="Mother Name"
+                            android:text="Name Surname"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Father Name -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/father_name_wrap"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/mother_name_wrap"
+                        app:layout_constraintTop_toTopOf="@+id/mother_name_wrap"
+                        android:layout_marginHorizontal="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/father_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:editable="false"
+                            android:hint="Father Name"
+                            android:text="Name Surname"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!-- Parent's num 1 -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:id="@+id/parent_num_wrap1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/parent_num_wrap2"
+                        app:layout_constraintTop_toBottomOf="@+id/mother_name_wrap"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="20dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/parent_num1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:editable="false"
+                            android:hint="Parent's Number"
+                            android:text="+91 XXXXXXXXXX"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Parent's Number 2 -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/parent_num_wrap2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/parent_num_wrap1"
+                        app:layout_constraintTop_toTopOf="@+id/parent_num_wrap1"
+                        android:layout_marginHorizontal="10dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/parent_num2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:editable="false"
+                            android:hint="Parent's Number"
+                            android:text="+91 XXXXXXXXXX"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!-- Parent's Email -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:id="@+id/parent_email_wrap"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/parent_num_wrap1"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="20dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/parent_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:editable="false"
+                            android:hint="Parent's Email"
+                            android:text="XXXXX@XXXXX.XXX"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!-- Address -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:id="@+id/adress_wrap"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/parent_email_wrap"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="20dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:editable="false"
+                            android:hint="Adress"
+                            android:text="123 xxxxx\nGaya, Bihar, XXXXXX"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </ScrollView>
         </com.google.android.material.card.MaterialCardView>

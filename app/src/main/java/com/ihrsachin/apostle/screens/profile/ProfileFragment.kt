@@ -38,10 +38,6 @@ class ProfileFragment : Fragment() {
         )
 
 
-        val animation = TransitionInflater.from(requireContext()).inflateTransition(R.transition.school_name_trans)
-
-        sharedElementEnterTransition = animation
-        sharedElementReturnTransition = animation
 
         binding.goBack.setOnClickListener{
             requireActivity().onBackPressed()

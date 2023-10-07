@@ -1,5 +1,6 @@
 package com.ihrsachin.apostle.screens.fee
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.ihrsachin.apostle.R
 import com.ihrsachin.apostle.databinding.FeeFragmentBinding
+
 
 class FeeFragment : Fragment() {
 
@@ -23,11 +25,12 @@ class FeeFragment : Fragment() {
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         //return super.onCreateView(inflater, container, savedInstanceState)
 
         binding = DataBindingUtil.inflate(
@@ -36,6 +39,11 @@ class FeeFragment : Fragment() {
             container,
             false
         )
+//
+//        binding.zoomLinearLayout.setOnTouchListener { _, _ ->
+//            binding.zoomLinearLayout.init(requireContext())
+//            false
+//        }
 
 
         return binding.root

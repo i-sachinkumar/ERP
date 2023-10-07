@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="theme_background">#345FB4</color>
     <color name="theme_gray">#D5D5D5</color>
+    <color name="home_card_bg">#E6EFFF</color>
 </resources>
