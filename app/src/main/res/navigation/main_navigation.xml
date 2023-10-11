@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_home_page_fragment_to_login_page_fragment"
             app:destination="@id/login_page_fragment" />
+        <action
+            android:id="@+id/action_home_page_fragment_to_date_sheet_fragment"
+            app:destination="@id/date_sheet_fragment" />
     </fragment>
 
 
@@ -97,5 +100,11 @@
         android:label="attendance_fragment"
         tools:layout="@layout/attendance_fragment">
     </fragment>
+
+    <fragment
+        android:id="@+id/date_sheet_fragment"
+        android:name="com.ihrsachin.apostle.screens.date_sheet.DateSheetFragment"
+        android:label="DateSheet Fragment"
+        tools:layout="@layout/date_sheet_fragment"/>
 
 </navigation>

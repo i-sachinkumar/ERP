@@ -89,6 +89,10 @@ class HomePageFragment : Fragment(){
             findNavController().navigate(R.id.action_home_page_fragment_to_login_page_fragment)
         }
 
+        binding.dateSheet.setOnClickListener {
+            findNavController().navigate(R.id.action_home_page_fragment_to_date_sheet_fragment)
+        }
+
 //        binding.run {
 //            attendanceIcon.setOnClickListener{
 //                findNavController().navigate(R.id.action_home_page_fragment_to_attendance_fragment)
