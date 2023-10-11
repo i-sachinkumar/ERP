@@ -47,10 +47,10 @@ class PeriodAdapter(private val itemList: List<Period>) : RecyclerView.Adapter<P
             holder.period.visibility = VISIBLE
             holder.line.visibility = VISIBLE
             holder.teacher.text = item.teacher
-            holder.period.text = "Period${item.periodNum}"
+            holder.period.text = "Period ${item.periodNum}"
             holder.timing.setTextColor(Color.parseColor("#888888"))
             val itemview = holder.itemView as MaterialCardView
-            itemview.setBackgroundColor(Color.WHITE)
+            itemview.setCardBackgroundColor(Color.WHITE)
         }
 
     }

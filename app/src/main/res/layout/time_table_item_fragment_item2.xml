@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="10dp"
     android:layout_marginVertical="8dp"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="15dp"
     app:cardBackgroundColor="@color/white"
     app:strokeColor="@color/theme_gray"
     app:cardElevation="3dp"
@@ -54,7 +54,8 @@
             app:layout_constraintStart_toStartOf="@+id/subject"
             android:layout_marginTop="12dp"
             android:textColor="@color/time_table_gray"
-            android:text="Marta Magana"/>
+            android:text="Marta Magana"
+            app:drawableStartCompat="@drawable/teacher_svgrepo_com" />
 
 
         <TextView

@@ -2,7 +2,6 @@ package com.ihrsachin.apostle.screens.homepage
 
 import android.content.Intent
 import android.os.Bundle
-import android.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +13,7 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.ihrsachin.apostle.R
 import com.ihrsachin.apostle.databinding.HomePageFragmentBinding
+import com.ihrsachin.apostle.permissions.StoragePermission
 import com.ihrsachin.apostle.preference.StudentPreference
 
 class HomePageFragment : Fragment(){
@@ -23,6 +23,7 @@ class HomePageFragment : Fragment(){
 
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
+    private lateinit var storagePermission: StoragePermission
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -42,7 +43,7 @@ class HomePageFragment : Fragment(){
             false
         )
         viewModel = ViewModelProvider(this)[HomePageViewModel::class.java]
-
+        storagePermission = StoragePermission(requireContext())
 
 
         binding.profilePic.setOnClickListener{
@@ -58,6 +59,7 @@ class HomePageFragment : Fragment(){
             null,
             extras)
         }
+
 
         binding.timeTable.setOnClickListener {
             findNavController().navigate(R.id.action_home_page_fragment_to_time_table_fragment)
