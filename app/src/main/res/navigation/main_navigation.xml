@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_home_page_fragment_to_change_password_fragment"
             app:destination="@id/change_password_fragment" />
+        <action
+            android:id="@+id/action_home_page_fragment_to_login_page_fragment"
+            app:destination="@id/login_page_fragment" />
     </fragment>
 
 
@@ -48,7 +51,11 @@
         android:id="@+id/change_password_fragment"
         android:name="com.ihrsachin.apostle.screens.change_password.ChangePasswordFragment"
         android:label="@string/change_password"
-        tools:layout="@layout/change_password_fragment"/>
+        tools:layout="@layout/change_password_fragment">
+        <action
+            android:id="@+id/action_change_password_fragment_to_login_page_fragment"
+            app:destination="@id/login_page_fragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/result_fragment"

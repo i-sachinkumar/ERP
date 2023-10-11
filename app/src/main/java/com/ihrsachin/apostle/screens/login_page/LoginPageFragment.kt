@@ -1,10 +1,12 @@
 package com.ihrsachin.apostle.screens.login_page
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
@@ -12,9 +14,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import com.google.gson.FieldNamingPolicy
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.ihrsachin.apostle.MainViewModel
 import com.ihrsachin.apostle.R
 import com.ihrsachin.apostle.databinding.LoginPageFragmentBinding
+import com.ihrsachin.apostle.model.Credential
+import com.ihrsachin.apostle.preference.StudentPreference
 
 
 class LoginPageFragment : Fragment() {
@@ -24,6 +31,13 @@ class LoginPageFragment : Fragment() {
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
     private lateinit var mainViewModel: MainViewModel
+
+    private lateinit var studentPreference: StudentPreference
+
+    private lateinit var tester1Credential : Credential
+
+    private lateinit var gson : Gson
+
 
     override fun onStop() {
         super.onStop()
@@ -52,11 +66,44 @@ class LoginPageFragment : Fragment() {
             false
         )
 
+        // initialize
+        studentPreference = StudentPreference(requireContext())
+        gson = Gson()
+
         binding.stuParentLoginBtn.setOnClickListener {
+            val userId : String = binding.usernameVal.text.toString()
+            val password : String = binding.passwordVal.text.toString()
+            val currentCredential = Credential(userId = userId, password = password)
+            val currentCredentialJson = gson.toJson(currentCredential)
+            if(currentCredentialJson.equals(gson.toJson(tester1Credential))){
+                studentPreference.add(getString(R.string.current_user), currentCredentialJson)
+                gotoHomePage()
+            }
+            else{
+                Toast.makeText(requireContext(), "Either User Id or Password is wrong", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // if already login credential is saved
+        if(studentPreference.contains(getString(R.string.current_user))){
+            println("..........${studentPreference.get(getString(R.string.current_user))}")
             gotoHomePage()
         }
 
+        addTester()
+
         return binding.root
+    }
+
+    private fun addTester(){
+        if(studentPreference.contains(getString(R.string.tester_1))){
+            tester1Credential = gson.fromJson(studentPreference.get(getString(R.string.tester_1)), Credential::class.java)
+        }
+        else{
+            tester1Credential = Credential("tester1", "tester1@123")
+            val credentialJson = gson.toJson(tester1Credential)
+            studentPreference.add(getString(R.string.tester_1), credentialJson)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -14,6 +14,7 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.ihrsachin.apostle.R
 import com.ihrsachin.apostle.databinding.HomePageFragmentBinding
+import com.ihrsachin.apostle.preference.StudentPreference
 
 class HomePageFragment : Fragment(){
 
@@ -79,6 +80,11 @@ class HomePageFragment : Fragment(){
         }
         binding.feeDue.setOnClickListener {
             findNavController().navigate(R.id.action_home_page_fragment_to_fee_fragment)
+        }
+
+        binding.logout.setOnClickListener {
+            StudentPreference(requireContext()).remove(getString(R.string.current_user))
+            findNavController().navigate(R.id.action_home_page_fragment_to_login_page_fragment)
         }
 
 //        binding.run {

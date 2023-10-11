@@ -1,6 +1,7 @@
 package com.ihrsachin.apostle.screens.gallery
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +23,6 @@ class GalleryFragment : Fragment() {
 
     private lateinit var binding: GalleryFragmentBinding
 
-
     //
 
     override fun onCreateView(
@@ -37,19 +37,31 @@ class GalleryFragment : Fragment() {
             false
         )
 
-
         val carouselAdapter = CarouselAdapter(sample_data.getListImages())
         binding.carouselRecyclerView.layoutManager = CarouselLayoutManager()
         binding.carouselRecyclerView.adapter = carouselAdapter
 
 
+        // initializing our adapter class.
+        val adapter = PictureAdapter(requireActivity(), dataList = sample_data.getPicture())
+        // adding layout manager
+        // to our recycler view.
+        val manager = LinearLayoutManager(requireContext())
+        binding.pictureRecyclerView.setHasFixedSize(true)
+
+        // setting layout manager
+        // to our recycler view.
+        binding.pictureRecyclerView.layoutManager = manager
+
+        // setting adapter to
+        // our recycler view.
+        binding.pictureRecyclerView.adapter = adapter
         getPictures()
-        buildRecyclerView()
 
         return binding.root
     }
 
-    fun getPictures() {
+    private fun getPictures() {
         // creating a new variable for our request queue
         // creating a new variable for our request queue
         val queue = Volley.newRequestQueue(requireActivity())
@@ -80,44 +92,33 @@ class GalleryFragment : Fragment() {
                             val imgUrl = responseObj.getString("img_url")
                             val title = responseObj.getString("title")
                             val description = responseObj.getString("description")
-                            buildRecyclerView()
+                            Handler().postDelayed(buildRecyclerView(), 2000)
+//                            buildRecyclerView()
                         } catch (e: JSONException) {
                             e.printStackTrace()
-                            buildRecyclerView() //TODO
+                            Handler().postDelayed(buildRecyclerView(), 2000) //TODO
                         }
                     }
                 }) {
                 Toast.makeText(requireActivity(), "Fail to get the data..", Toast.LENGTH_SHORT)
                     .show()
-                buildRecyclerView()
+                Handler().postDelayed(buildRecyclerView(), 2000)
             }
         queue.add(jsonArrayRequest)
     }
 
-    private fun buildRecyclerView() {
+    private fun buildRecyclerView(): Runnable {
+        return Runnable {
+            // on below line we are stopping our shimmer
+            // and making its visibility to gone.
+            binding.shimmerLayout.stopShimmer()
+            binding.shimmerLayout.visibility = View.GONE
 
-        // on below line we are stopping our shimmer
-        // and making its visibility to gone.
-        binding.shimmerLayout.stopShimmer()
-        binding.shimmerLayout.visibility = View.GONE
+            // on below line we are making the
+            // recycler view visibility visible.
+            binding.pictureRecyclerView.visibility = View.VISIBLE
 
-        // on below line we are making the
-        // recycler view visibility visible.
-        binding.pictureRecyclerView.visibility = View.VISIBLE
+        }
 
-        // initializing our adapter class.
-        val adapter = PictureAdapter(requireActivity(), dataList = sample_data.getPicture())
-        // adding layout manager
-        // to our recycler view.
-        val manager = LinearLayoutManager(requireContext())
-        binding.pictureRecyclerView.setHasFixedSize(true)
-
-        // setting layout manager
-        // to our recycler view.
-        binding.pictureRecyclerView.layoutManager = manager
-
-        // setting adapter to
-        // our recycler view.
-        binding.pictureRecyclerView.adapter = adapter
     }
 }

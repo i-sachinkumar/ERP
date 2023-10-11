@@ -25,4 +25,6 @@
     <string name="my_profile">My Profile</string>
     <string name="done">Done</string>
     <string name="download_pdf">Download PDF</string>
+    <string name="tester_1">Tester 1</string>
+    <string name="current_user">Current User</string>
 </resources>

@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/background_screen">
 
         <TableRow
             android:layout_width="match_parent"
@@ -26,58 +27,65 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Periods"
+                    android:paddingHorizontal="18dp"
+                    android:background="@drawable/boundary_with_bg"
+                    android:paddingVertical="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Period 1"
-                    android:paddingHorizontal="8dp"
-                    android:background="@drawable/boundary"
+                    android:paddingHorizontal="18dp"
+                    android:background="@drawable/boundary_with_bg"
                     android:paddingVertical="16dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Period 2"
-                    android:paddingHorizontal="8dp"
-                    android:background="@drawable/boundary"
+                    android:paddingHorizontal="18dp"
+                    android:background="@drawable/boundary_with_bg"
                     android:paddingVertical="16dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Period 3"
-                    android:paddingHorizontal="8dp"
-                    android:background="@drawable/boundary"
+                    android:paddingHorizontal="18dp"
+                    android:background="@drawable/boundary_with_bg"
                     android:paddingVertical="16dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Period 4"
-                    android:paddingHorizontal="8dp"
-                    android:background="@drawable/boundary"
+                    android:paddingHorizontal="18dp"
+                    android:background="@drawable/boundary_with_bg"
                     android:paddingVertical="16dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Period 5"
-                    android:paddingHorizontal="8dp"
-                    android:background="@drawable/boundary"
+                    android:paddingHorizontal="18dp"
+                    android:background="@drawable/boundary_with_bg"
                     android:paddingVertical="16dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Period 6"
-                    android:paddingHorizontal="8dp"
-                    android:background="@drawable/boundary"
+                    android:paddingHorizontal="18dp"
+                    android:background="@drawable/boundary_with_bg"
                     android:paddingVertical="16dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Period 7"
-                    android:paddingHorizontal="8dp"
-                    android:background="@drawable/boundary"
+                    android:paddingHorizontal="18dp"
+                    android:background="@drawable/boundary_with_bg"
                     android:paddingVertical="16dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Period 8"
-                    android:paddingHorizontal="8dp"
-                    android:background="@drawable/boundary"
+                    android:paddingHorizontal="18dp"
+                    android:background="@drawable/boundary_with_bg"
                     android:paddingVertical="16dp"/>
             </TableLayout>
 

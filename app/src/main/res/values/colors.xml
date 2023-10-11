@@ -10,4 +10,9 @@
     <color name="theme_background">#345FB4</color>
     <color name="theme_gray">#D5D5D5</color>
     <color name="home_card_bg">#E6EFFF</color>
+
+
+<!--    time table -->
+    <color name="time_table_tab_bg">#4871C3</color>
+    <color name="time_table_gray">#888888</color>
 </resources>

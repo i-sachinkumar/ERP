@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
@@ -33,15 +34,63 @@ class TimeTableFragment : Fragment(){
 
         // Set the adapter for ViewPager2
         binding.viewPager.adapter = TimeTablePagerAdapter(this, days)
-        binding.viewPager.currentItem = getCurrentDayOfWeek()
 
+
+        // Connect the TabLayout with the ViewPager2
+//        TabLayoutMediator(
+//            binding.tabLayout, binding.viewPager
+//        ) { tab: TabLayout.Tab, position: Int ->
+//            tab.text = days[position]
+//            if (tab.isSelected) {
+//                // Inflate the custom tab layout for the selected tab
+//                val customView = LayoutInflater.from(requireContext())
+//                    .inflate(R.layout.custom_tab_layout, null)
+//                // Set the custom view for the selected tab
+//                tab.customView = customView
+//            }
+//        }.attach()
+//
 
         // Connect the TabLayout with the ViewPager2
         TabLayoutMediator(
             binding.tabLayout, binding.viewPager
         ) { tab: TabLayout.Tab, position: Int ->
-            tab.text = days[position]
+                tab.text = days[position]
         }.attach()
+
+
+
+        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                // Create a custom view for the selected tab
+                val customView = LayoutInflater.from(requireContext())
+                    .inflate(R.layout.time_table_custom_tab_layout, null)
+                customView.findViewById<TextView>(R.id.text).text = days[tab.position]
+
+                // Set the custom view for the selected tab
+                tab.customView = customView
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+                // Clear the custom view when the tab is unselected
+                tab.customView = null
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab) {
+                // Handle reselection of the tab if needed
+                // Create a custom view for the selected tab
+                val customView = LayoutInflater.from(requireContext())
+                    .inflate(R.layout.time_table_custom_tab_layout, null)
+                customView.findViewById<TextView>(R.id.text).text = days[tab.position]
+
+                // Set the custom view for the selected tab
+                tab.customView = customView
+            }
+        })
+
+
+        binding.viewPager.currentItem = getCurrentDayOfWeek()
+
 
 
         return binding.root
