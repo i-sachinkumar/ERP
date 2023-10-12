@@ -5,6 +5,6 @@
 
     <!-- Define the stroke for the boundary -->
     <stroke
-        android:width="0.5dp"
+        android:width="0.6dp"
     android:color="#673AB7" />
 </shape>

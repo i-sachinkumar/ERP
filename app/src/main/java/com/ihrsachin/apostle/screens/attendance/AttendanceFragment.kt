@@ -1,12 +1,12 @@
 package com.ihrsachin.apostle.screens.attendance
 
-import android.content.Intent
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.ActivityResultLauncher
+import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.github.mikephil.charting.animation.Easing
@@ -14,7 +14,6 @@ import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
-import com.github.mikephil.charting.utils.ColorTemplate
 import com.ihrsachin.apostle.R
 import com.ihrsachin.apostle.databinding.AttendanceFragmentBinding
 
@@ -28,6 +27,7 @@ class AttendanceFragment: Fragment() {
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -69,12 +69,11 @@ class AttendanceFragment: Fragment() {
             it.centerText = "Attendance"
             it.description.isEnabled = false
             it.setUsePercentValues(false)
-            it.animateY(2400, Easing.EaseInOutQuad)
+            it.animateY(1500, Easing.EaseInOutQuad)
         }
 
         // Refresh the chart
         binding.pieChart.invalidate()
-
 
 
         return binding.root
