@@ -19,11 +19,11 @@
             android:layout_height="wrap_content">
 
 
-            <CalendarView
-                android:id="@+id/calender_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <CalendarView-->
+<!--                android:id="@+id/calender_view"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
 <!--            <com.kizitonwose.calendar.view.WeekCalendarView-->
 <!--                android:id="@+id/calender_view"-->
@@ -32,11 +32,11 @@
 <!--                app:cv_dayViewResource="@layout/ateendance_calendar_day_layout"-->
 <!--                app:layout_constraintTop_toTopOf="parent"/>-->
 
-<!--            <com.prolificinteractive.materialcalendarview.MaterialCalendarView-->
-<!--                android:id="@+id/calender_view"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:layout_constraintTop_toTopOf="parent"/>-->
+            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                android:id="@+id/calender_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"/>
 
 
 

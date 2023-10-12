@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+android:width="113dp"
+android:height="113dp"
+android:viewportWidth="28.8"
+android:viewportHeight="28.8">
+
+<!-- Add a group element to apply padding -->
+<group
+    android:scaleX="0.8"
+    android:scaleY="0.8"
+    android:translateX="3"
+    android:translateY="3">
+
+  <path
+      android:fillColor="#66BB6A"
+      android:pathData="M14.4,0L14.4,0A14.4,14.4 0,0 1,28.8 14.4L28.8,14.4A14.4,14.4 0,0 1,14.4 28.8L14.4,28.8A14.4,14.4 0,0 1,0 14.4L0,14.4A14.4,14.4 0,0 1,14.4 0z"
+      android:strokeWidth="0"
+      android:strokeColor="#66BB6A" />
+</group>
+</vector>

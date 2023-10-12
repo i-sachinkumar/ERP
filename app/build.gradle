@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.ihrsachin.apostle"
-        minSdk 21
+        minSdk 23
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -107,7 +107,9 @@ dependencies {
 
 
     //Customize calender library
-//    implementation 'com.prolificinteractive:material-calendarview:1.2.0'
+    implementation 'com.github.prolificinteractive:material-calendarview:2.0.0'
+//    implementation 'com.prolificinteractive:material-calendarview:1.6.1'
+//    implementation 'com.github.marcohc:robotocalendarview:4.0.0'
 
 
 }
