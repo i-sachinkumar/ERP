@@ -27,8 +27,8 @@
             android:id="@+id/action_home_page_fragment_to_profile_fragment"
             app:destination="@id/profile_fragment" />
         <action
-            android:id="@+id/action_home_page_fragment_to_attendance_fragment"
-            app:destination="@id/attendance_fragment" />
+            android:id="@+id/action_home_page_fragment_to_attendance_n_holiday_parent_fragment"
+            app:destination="@id/attendance_n_holiday_parent_fragment" />
         <action
             android:id="@+id/action_home_page_fragment_to_time_table_fragment"
             app:destination="@id/time_table_fragment" />
@@ -95,10 +95,10 @@
 
 
     <fragment
-        android:id="@+id/attendance_fragment"
-        android:name="com.ihrsachin.apostle.screens.attendance.AttendanceFragment"
-        android:label="attendance_fragment"
-        tools:layout="@layout/attendance_fragment">
+        android:id="@+id/attendance_n_holiday_parent_fragment"
+        android:name="com.ihrsachin.apostle.screens.attendance.AnHParentFragment"
+        android:label="attendance_n_holiday_parent_fragment"
+        tools:layout="@layout/attendance_n_holiday_parent_fragment">
     </fragment>
 
     <fragment

@@ -66,7 +66,7 @@ class HomePageFragment : Fragment(){
         }
 
         binding.attendanceCard.setOnClickListener {
-            findNavController().navigate(R.id.action_home_page_fragment_to_attendance_fragment)
+            findNavController().navigate(R.id.action_home_page_fragment_to_attendance_n_holiday_parent_fragment)
         }
 
         binding.gallery.setOnClickListener {

@@ -4,8 +4,10 @@ package com.ihrsachin.apostle.screens.attendance
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.prolificinteractive.materialcalendarview.CalendarDay
 
 class AttendanceViewModel: ViewModel(){
+
 
     // The current "present" percent
     private var _attendancePercent = MutableLiveData<Float>()
@@ -24,9 +26,24 @@ class AttendanceViewModel: ViewModel(){
     val currStreak : LiveData<Int>
         get() = _currStreak
 
-    //true if present today
-    var isPresentToday = MutableLiveData<Boolean>()
 
-    var isHolyDayToday = MutableLiveData<Boolean>()
+
+    // The month-wise "present"
+    private var _presentDays = MutableLiveData<Map<Int, List<CalendarDay>>>()
+    val presentDays : LiveData<Map<Int, List<CalendarDay>>>
+        get() = _presentDays
+
+
+    private var _isExpanded = MutableLiveData<Boolean>()
+    val isExpanded : LiveData<Boolean>
+        get() = _isExpanded
+
+
+    init {
+        _isExpanded.value = false
+    }
+    fun changeExpandStatus(status : Boolean) {
+        _isExpanded.value = status
+    }
 
 }

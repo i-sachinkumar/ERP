@@ -15,4 +15,5 @@
 <!--    time table -->
     <color name="time_table_tab_bg">#4871C3</color>
     <color name="time_table_gray">#888888</color>
+    <color name="attendance_tab_layout">#628BDC</color>
 </resources>
