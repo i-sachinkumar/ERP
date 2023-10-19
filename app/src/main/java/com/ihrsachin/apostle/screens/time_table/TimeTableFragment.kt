@@ -90,7 +90,15 @@ class TimeTableFragment : Fragment(){
         })
 
 
-        binding.viewPager.currentItem = getCurrentDayOfWeek()
+        if(getCurrentDayOfWeek() == 0){
+            val customView = LayoutInflater.from(requireContext())
+                .inflate(R.layout.time_table_custom_tab_layout, null)
+            customView.findViewById<TextView>(R.id.text).text = days[0]
+            binding.tabLayout.getTabAt(0)!!.customView = customView
+        }
+        else{
+            binding.viewPager.currentItem = getCurrentDayOfWeek()
+        }
 
         return binding.root
 

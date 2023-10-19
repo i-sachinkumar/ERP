@@ -21,6 +21,7 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.ihrsachin.apostle.R
+import com.ihrsachin.apostle.animation_utils.ToggleAnimation
 import com.ihrsachin.apostle.databinding.AttendanceFragmentBinding
 import com.ihrsachin.apostle.screens.attendance.decorator.AbsentDayDecorator
 import com.ihrsachin.apostle.screens.attendance.decorator.CurrentDayDecorator
@@ -129,11 +130,13 @@ class AttendanceFragment : Fragment() {
 
 
         // collapsing the events list view.. can be expanded by clicking no dates
-        collapse(binding.eventList)
+        ToggleAnimation(binding.eventList).collapse()
+        viewModel.changeExpandStatus(false)
 
 
         binding.calenderView.setOnMonthChangedListener{ widget: MaterialCalendarView, day: CalendarDay ->
-            collapse(binding.eventList)
+            ToggleAnimation(binding.eventList).collapse()
+            viewModel.changeExpandStatus(false)
         }
 
         return binding.root
@@ -142,7 +145,8 @@ class AttendanceFragment : Fragment() {
     fun listener(widget : MaterialCalendarView, day : CalendarDay, isSelected: Boolean) : Unit{
         Toast.makeText(requireContext(), "$day", Toast.LENGTH_SHORT).show()
          if(!viewModel.isExpanded.value!!){
-             expand(binding.eventList)
+             ToggleAnimation(binding.eventList).expand()
+             viewModel.changeExpandStatus(true)
          }
     }
 
@@ -153,58 +157,5 @@ class AttendanceFragment : Fragment() {
     }
 
 
-
-    private fun expand(v: View) {
-        val matchParentMeasureSpec =
-            View.MeasureSpec.makeMeasureSpec((v.parent as View).width, View.MeasureSpec.EXACTLY)
-        val wrapContentMeasureSpec =
-            View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
-        v.measure(matchParentMeasureSpec, wrapContentMeasureSpec)
-        val targetHeight = v.measuredHeight
-
-        // Older versions of android (pre API 21) cancel animations for views with a height of 0.
-        v.layoutParams.height = 1
-        v.visibility = View.VISIBLE
-        val a: Animation = object : Animation() {
-            override fun applyTransformation(interpolatedTime: Float, t: Transformation?) {
-                v.layoutParams.height =
-                    if (interpolatedTime == 1f) ViewGroup.LayoutParams.WRAP_CONTENT else (targetHeight * interpolatedTime).toInt()
-                v.requestLayout()
-            }
-
-            override fun willChangeBounds(): Boolean {
-                return true
-            }
-        }
-
-        // Expansion speed of 1dp/ms
-        a.duration = ((targetHeight / v.context.resources.displayMetrics.density)*1.3).toInt().toLong()
-        v.startAnimation(a)
-        viewModel.changeExpandStatus(true)
-    }
-
-    private fun collapse(v: View) {
-        val initialHeight = v.measuredHeight
-        val a: Animation = object : Animation() {
-            override fun applyTransformation(interpolatedTime: Float, t: Transformation?) {
-                if (interpolatedTime == 1f) {
-                    v.visibility = View.GONE
-                } else {
-                    v.layoutParams.height =
-                        initialHeight - (initialHeight * interpolatedTime).toInt()
-                    v.requestLayout()
-                }
-            }
-
-            override fun willChangeBounds(): Boolean {
-                return true
-            }
-        }
-
-        // Collapse speed of 1dp/1.3ms
-        a.duration = ((initialHeight / v.context.resources.displayMetrics.density)*1.3).toInt().toLong()
-        v.startAnimation(a)
-        viewModel.changeExpandStatus(false)
-    }
 
 }

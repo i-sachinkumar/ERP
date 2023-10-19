@@ -3,4 +3,24 @@
     <dimen name="margin_card">16dp</dimen>
     <dimen name="thin_stroke_width">0.3dp</dimen>
     <dimen name="home_card_elevation">5dp</dimen>
+
+
+
+
+<!--    quiz fragment   -->
+    <dimen name="normal_stroke_width">1dp</dimen>
+    <dimen name="thick_stroke_width">2dp</dimen>
+<!--    end    -->
+
+
+    <dimen name="event_item_img_size">100dp</dimen>
+
+
+
+
+
+
+
+
+
 </resources>

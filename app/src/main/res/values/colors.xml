@@ -12,8 +12,49 @@
     <color name="home_card_bg">#E6EFFF</color>
 
 
+<!--    theme light-->
+    <color name="theme_light_blue">#6789CA</color>
+
+
 <!--    time table -->
     <color name="time_table_tab_bg">#4871C3</color>
     <color name="time_table_gray">#888888</color>
     <color name="attendance_tab_layout">#628BDC</color>
+<!--  end  -->
+
+
+
+
+
+
+
+
+
+
+<!--    quiz fragment -->
+    <!--  Stroke appearance  -->
+    <color name="normal_stroke_color">#AAAAAA</color>
+    <color name="selected_stroke_color">#42A5F5</color>
+    <color name="correct_stroke_color">#6AC259</color>
+    <color name="wrong_stroke_color">#E92E30</color>
+
+    <!--  background appearance  -->
+    <color name="normal_background_color">#ffffff</color>
+    <color name="selected_background_color">#4642A5F5</color>
+    <color name="correct_background_color">#466AC259</color>
+    <color name="wrong_background_color">#45E92E30</color>
+
+    <!--  Text appearance  -->
+    <color name="normal_text_color">#AAAAAA</color>
+    <color name="selected_text_color">#42A5F5</color>
+    <color name="correct_text_color">#6AC259</color>
+    <color name="wrong_text_color">#E92E30</color>
+<!-- end -->
+
+
+
+
+
+
+
 </resources>

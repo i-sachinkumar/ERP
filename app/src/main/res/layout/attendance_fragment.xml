@@ -96,13 +96,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:textColor="#ff5a00"
                         android:text="Current Streak" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Oct 6 - Oct 11" />
+                        android:text="Oct 6 - Oct 11"
+                        android:textSize="12sp"
+                        android:textColor="@color/time_table_gray"/>
 
 
                     <View
@@ -132,7 +135,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Aug 30 - Sep 8" />
+                        android:text="Aug 30 - Sep 8"
+                        android:textColor="@color/time_table_gray"
+                        android:textSize="12sp"/>
 
                 </LinearLayout>
 

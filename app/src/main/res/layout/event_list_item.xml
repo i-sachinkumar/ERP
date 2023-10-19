@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="10dp"
+    app:cardElevation="1dp"
+    app:cardBackgroundColor="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rhyme Time : A night of poetry"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:maxLines="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="10dp"/>
+
+        <ImageView
+            android:id="@+id/event_img"
+            android:layout_width="@dimen/event_item_img_size"
+            android:layout_height="@dimen/event_item_img_size"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            android:layout_marginTop="10dp"
+            android:background="@color/theme_light_blue"
+            android:scaleType="centerCrop"
+            android:contentDescription="event pic" />
+
+        <ImageView
+            android:id="@+id/icon_watch"
+            android:layout_width="16sp"
+            android:layout_height="16sp"
+            app:layout_constraintStart_toEndOf="@+id/event_img"
+            app:layout_constraintTop_toTopOf="@+id/event_img"
+            app:layout_constraintBottom_toBottomOf="@+id/timing"
+            android:src="@drawable/ic_watch"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:layout_marginHorizontal="10dp" />
+
+        <TextView
+            android:id="@+id/timing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 06 Jan 2021, 9:00 PM"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/theme_light_blue"
+            app:layout_constraintStart_toEndOf="@+id/icon_watch"
+            app:layout_constraintTop_toTopOf="@+id/event_img"/>
+
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/icon_watch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/icon_watch"
+            app:layout_constraintBottom_toBottomOf="@id/event_img"
+            android:text="cbwdqeeeeeeeeeee 44h3 4r3o c4outh 34c4395t8h 34p9gh 43gph p43g 934gu h34g9p ttbbtgb 5h5  h5h45 ghh gtgtbttt 5hg55"
+            android:textColor="@color/time_table_gray"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,11 +1,11 @@
-package com.ihrsachin.apostle;
+package com.ihrsachin.apostle.sample_data;
 
 import com.ihrsachin.apostle.screens.gallery.Picture;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class sample_data {
+public class GalleryData {
     public static List<String> getListImages(){
         List<String> list = new ArrayList<>();
 

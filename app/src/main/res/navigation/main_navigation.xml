@@ -47,6 +47,21 @@
         <action
             android:id="@+id/action_home_page_fragment_to_date_sheet_fragment"
             app:destination="@id/date_sheet_fragment" />
+        <action
+            android:id="@+id/action_home_page_fragment_to_holidays_fragment"
+            app:destination="@id/holidays_fragment" />
+        <action
+            android:id="@+id/action_home_page_fragment_to_quiz_fragment"
+            app:destination="@id/quiz_fragment" />
+        <action
+            android:id="@+id/action_home_page_fragment_to_doubt_fragment"
+            app:destination="@id/doubt_fragment" />
+        <action
+            android:id="@+id/action_home_page_fragment_to_leave_application_fragment"
+            app:destination="@id/leave_application_fragment" />
+        <action
+            android:id="@+id/action_home_page_fragment_to_event_fragment"
+            app:destination="@id/event_fragment" />
     </fragment>
 
 
@@ -106,5 +121,35 @@
         android:name="com.ihrsachin.apostle.screens.date_sheet.DateSheetFragment"
         android:label="DateSheet Fragment"
         tools:layout="@layout/date_sheet_fragment"/>
+
+    <fragment
+        android:id="@+id/holidays_fragment"
+        android:name="com.ihrsachin.apostle.screens.attendance.HolidaysFragment"
+        android:label="Holidays Fragment"
+        tools:layout="@layout/holidays_fragment"/>
+
+    <fragment
+        android:id="@+id/quiz_fragment"
+        android:name="com.ihrsachin.apostle.screens.quiz.QuizFragment"
+        android:label="quiz_fragment"
+        tools:layout="@layout/quiz_fragment"/>
+
+    <fragment
+        android:id="@+id/doubt_fragment"
+        android:name="com.ihrsachin.apostle.screens.doubt.DoubtFragment"
+        android:label="doubt_fragment"
+        tools:layout="@layout/doubt_fragment"/>
+
+    <fragment
+        android:id="@+id/leave_application_fragment"
+        android:name="com.ihrsachin.apostle.screens.leave_application.LeaveApplicationFragment"
+        tools:layout="@layout/leave_application_fragment"
+        android:label="leave_application_fragment"/>
+
+    <fragment
+        android:id="@+id/event_fragment"
+        android:name="com.ihrsachin.apostle.screens.event.EventFragment"
+        android:label="event_fragment"
+        tools:layout="@layout/event_fragment"/>
 
 </navigation>

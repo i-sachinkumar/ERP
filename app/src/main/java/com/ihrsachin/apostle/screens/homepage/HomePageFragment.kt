@@ -53,11 +53,7 @@ class HomePageFragment : Fragment(){
                 binding.profilePic to "profile_pic_profile",
                 binding.bottomPart to "foreground_profile"
             )
-            findNavController().navigate(
-                R.id.action_home_page_fragment_to_profile_fragment,
-            null,
-            null,
-            extras)
+            findNavController().navigate(R.id.action_home_page_fragment_to_profile_fragment)
         }
 
 
@@ -91,6 +87,25 @@ class HomePageFragment : Fragment(){
 
         binding.dateSheet.setOnClickListener {
             findNavController().navigate(R.id.action_home_page_fragment_to_date_sheet_fragment)
+        }
+
+        binding.holiday.setOnClickListener{
+            findNavController().navigate(R.id.action_home_page_fragment_to_holidays_fragment)
+        }
+
+        binding.playQuiz.setOnClickListener {
+            findNavController().navigate(R.id.action_home_page_fragment_to_quiz_fragment)
+        }
+
+        binding.doubts.setOnClickListener {
+            findNavController().navigate(R.id.action_home_page_fragment_to_doubt_fragment)
+        }
+        binding.leaveApplication.setOnClickListener {
+            findNavController().navigate(R.id.action_home_page_fragment_to_leave_application_fragment)
+        }
+
+        binding.events.setOnClickListener {
+            findNavController().navigate(R.id.action_home_page_fragment_to_event_fragment)
         }
 
 //        binding.run {
@@ -139,6 +154,12 @@ class HomePageFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.homePage = this
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val count = requireActivity().supportFragmentManager.backStackEntryCount
+        println(",,,,,,,,,,,,, count = $count")
     }
 
 }

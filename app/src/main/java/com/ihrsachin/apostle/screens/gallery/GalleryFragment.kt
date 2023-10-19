@@ -15,7 +15,7 @@ import com.android.volley.toolbox.Volley
 import com.google.android.material.carousel.CarouselLayoutManager
 import com.ihrsachin.apostle.R
 import com.ihrsachin.apostle.databinding.GalleryFragmentBinding
-import com.ihrsachin.apostle.sample_data
+import com.ihrsachin.apostle.sample_data.GalleryData
 import org.json.JSONException
 
 
@@ -37,13 +37,13 @@ class GalleryFragment : Fragment() {
             false
         )
 
-        val carouselAdapter = CarouselAdapter(sample_data.getListImages())
+        val carouselAdapter = CarouselAdapter(GalleryData.getListImages())
         binding.carouselRecyclerView.layoutManager = CarouselLayoutManager()
         binding.carouselRecyclerView.adapter = carouselAdapter
 
 
         // initializing our adapter class.
-        val adapter = PictureAdapter(requireActivity(), dataList = sample_data.getPicture())
+        val adapter = PictureAdapter(requireActivity(), dataList = GalleryData.getPicture())
         // adding layout manager
         // to our recycler view.
         val manager = LinearLayoutManager(requireContext())
