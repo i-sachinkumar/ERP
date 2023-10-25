@@ -20,28 +20,30 @@
                 android:id="@+id/grade_percent_wrap"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/foreground_content_design"
+                android:background="@color/theme_light_blue"
+                android:src="@drawable/foreground_content_design"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:cardCornerRadius="1000dp"
-                app:layout_constraintBottom_toBottomOf="@+id/grade_percent_wrap"
-                app:layout_constraintEnd_toEndOf="@+id/grade_percent_wrap"
-                app:layout_constraintStart_toStartOf="@id/grade_percent_wrap"
-                app:layout_constraintTop_toTopOf="@+id/grade_percent_wrap"
-                app:strokeWidth="10dp">
+
                 <TextView
                     android:id="@+id/grade_percentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:gravity="center"
                     android:layout_margin="20dp"
+                    android:background="@drawable/result_percentage_bg"
+                    app:layout_constraintStart_toStartOf="@+id/grade_percent_wrap"
+                    app:layout_constraintEnd_toEndOf="@+id/grade_percent_wrap"
+                    app:layout_constraintTop_toTopOf="@+id/grade_percent_wrap"
+                    app:layout_constraintBottom_toBottomOf="@+id/grade_percent_wrap"
                     android:text="85%"
-                    android:textSize="44sp" />
-            </com.google.android.material.card.MaterialCardView>
+                    android:translationY="-10dp"
+                    android:textSize="40sp" />
+
 
             <TextView
                 android:id="@+id/remark"
