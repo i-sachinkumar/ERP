@@ -4,7 +4,7 @@
 
 # Mobile App Screenshots
 
-Here are screenshots of different screens from our mobile app:
+Here are screenshots of different screens from the app:
 
 <div align="center">
   <img src="images/1.png" width="30%" />
