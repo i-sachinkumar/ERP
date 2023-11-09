@@ -1,6 +1,6 @@
 # ERP
 ---
-[Disclaimer](https://github.com/i-sachinkumar/ERP/edit/master/README.md#disclaimer)
+[Disclaimer](https://github.com/i-sachinkumar/ERP#disclaimer-1)
 ---
 
 
