@@ -2,7 +2,6 @@
 ---
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) [Disclaimer](https://github.com/i-sachinkumar/ERP#disclaimer-1)
 ---
- **Disclaimer:**
 
 ## Mobile App Screenshots
 
