@@ -2,7 +2,7 @@
 
 
 
-# Mobile App Screenshots
+## Mobile App Screenshots
 
 Here are screenshots of different screens from the app:
 
@@ -35,4 +35,10 @@ Here are screenshots of different screens from the app:
   <!-- Add more rows as needed -->
 </div>
 
+<br>
+<br>
 
+---
+This project was developed by [Sachin](https://github.com/i-sachinkumar).
+---
+Special thanks to [@syalakshay](https://github.com/syalakshay) for his valuable contributions to the UI design. The project benefited greatly from his community post, and I appreciate the creativity and effort put into the design.
