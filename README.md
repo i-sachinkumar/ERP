@@ -1,5 +1,7 @@
 # ERP
-
+---
+[Disclaimer](https://github.com/i-sachinkumar/ERP/edit/master/README.md#disclaimer)
+---
 
 
 ## Mobile App Screenshots
@@ -47,7 +49,7 @@ Special thanks to [@syalakshay](https://github.com/syalakshay) for his valuable 
 
 
 ---
-**Disclaimer:**
+## **Disclaimer:**
 
 This code is the intellectual property of the project owner. You are not allowed to use, modify, or distribute this code without explicit permission from the owner.
 
